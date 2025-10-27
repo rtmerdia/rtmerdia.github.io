@@ -1,0 +1,7 @@
+img.collaborator-photo {
+  border: 1px solid #ccc;
+  padding: 4px;
+  border-radius: 4px;
+  float: left;
+  margin-right: 1em;
+}
