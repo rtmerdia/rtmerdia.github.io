@@ -35,15 +35,18 @@
         applyFilters();
     }
 
+    // Debounced filter application for better performance
+    const debouncedApplyFilters = debounce(applyFilters, 100);
+
     /**
-     * Handle filter button clicks
+     * Handle filter button clicks (optimized)
      */
     function handleFilterClick(event) {
         event.preventDefault();
         
         const button = event.currentTarget;
-        const filterType = button.getAttribute('data-type');
-        const filterValue = button.getAttribute('data-filter');
+        const filterType = button.dataset.type; // Use dataset for better performance
+        const filterValue = button.dataset.filter;
 
         // Update active state for buttons of the same type
         updateActiveButtons(filterType, button);
@@ -51,8 +54,8 @@
         // Update current filters
         currentFilters[filterType] = filterValue;
 
-        // Apply filters
-        applyFilters();
+        // Apply filters with debouncing
+        debouncedApplyFilters();
     }
 
     /**
@@ -278,6 +281,21 @@
     function applyFiltersWithUrl() {
         applyFilters();
         updateUrlHash();
+    }
+
+    /**
+     * Debounce function for performance optimization
+     */
+    function debounce(func, wait) {
+        let timeout;
+        return function executedFunction(...args) {
+            const later = () => {
+                clearTimeout(timeout);
+                func(...args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        };
     }
 
     // Initialize when DOM is ready
