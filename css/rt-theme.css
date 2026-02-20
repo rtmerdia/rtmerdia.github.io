@@ -200,6 +200,62 @@
   gap: 8px;
   flex-wrap: wrap;
 }
+.rt-theme .collaborator-page .collaborator-header .collaborator-info .collaborator-actions {
+  margin-top: 16px;
+  display: flex;
+  gap: 8px;
+}
+.rt-theme .collaborator-page .collaborator-header .collaborator-info .collaborator-actions .pdf-view-button,
+.rt-theme .collaborator-page .collaborator-header .collaborator-info .collaborator-actions .pdf-download-button {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #1e1e1e;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  font-size: 0.9em;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.rt-theme .collaborator-page .collaborator-header .collaborator-info .collaborator-actions .pdf-view-button:hover,
+.rt-theme .collaborator-page .collaborator-header .collaborator-info .collaborator-actions .pdf-download-button:hover {
+  background-color: #1b1b1b;
+  color: #fff;
+}
+.rt-theme .collaborator-page .collaborator-header .collaborator-info .collaborator-actions .pdf-view-button:focus,
+.rt-theme .collaborator-page .collaborator-header .collaborator-info .collaborator-actions .pdf-download-button:focus {
+  outline: 2px solid rgba(30,30,30,0.5);
+  outline-offset: 2px;
+}
+.rt-theme .collaborator-page .collaborator-header .collaborator-info .collaborator-actions .pdf-view-button i,
+.rt-theme .collaborator-page .collaborator-header .collaborator-info .collaborator-actions .pdf-download-button i {
+  font-size: 1.1em;
+}
+.rt-theme .collaborator-page .collaborator-header .collaborator-info .collaborator-actions .pdf-view-button {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #00a651;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+.rt-theme .collaborator-page .collaborator-header .collaborator-info .collaborator-actions .pdf-view-button:hover {
+  background-color: #009549;
+  color: #fff;
+}
+.rt-theme .collaborator-page .collaborator-header .collaborator-info .collaborator-actions .pdf-view-button:focus {
+  outline: 2px solid rgba(0,166,81,0.5);
+  outline-offset: 2px;
+}
 .rt-theme .collaborator-page .collaborator-details .detail-section {
   margin-bottom: 32px;
 }
@@ -547,6 +603,10 @@
   padding-top: 16px;
   border-top: 1px dashed #ccc;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 .collaborator-card .collaborator-actions .btn {
   display: inline-block !important;
